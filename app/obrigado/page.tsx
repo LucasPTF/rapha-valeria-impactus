@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Clock3, MailCheck, MessageCircle } from "lucide-react";
+import { MotionController } from "../_components/MotionController";
 
 export const metadata = {
   title: "Inscrição recebida | Instituto Impactus",
@@ -7,6 +8,7 @@ export const metadata = {
 export default function ObrigadoPage() {
   return (
     <main className="thanks-page">
+      <MotionController />
       <div className="thanks-grid" aria-hidden="true" />
       <header className="thanks-header">
         <a className="brand" href="/a1" aria-label="Instituto Impactus, página inicial">
@@ -19,7 +21,7 @@ export default function ObrigadoPage() {
           </span>
         </a>
       </header>
-      <section className="thanks-hero">
+      <section className="thanks-hero" data-hero-content>
         <div className="success-mark" aria-hidden="true">
           <Check />
         </div>
@@ -29,7 +31,7 @@ export default function ObrigadoPage() {
           Assim que a compra for confirmada, você receberá as orientações de acesso no e-mail usado durante a inscrição.
         </p>
       </section>
-      <section className="next-steps">
+      <section className="next-steps" data-stagger>
         <article>
           <span>01</span>
           <MailCheck aria-hidden="true" />

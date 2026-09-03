@@ -13,6 +13,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { GuaranteeSeal } from "./GuaranteeSeal";
+import { MotionController } from "./MotionController";
 
 type Variant = "a1" | "a2" | "a3";
 
@@ -157,11 +158,12 @@ export function SalesPage({ variant }: { variant: Variant }) {
 
   return (
     <>
+      <MotionController />
       <a className="skip-link" href="#conteudo">
         Ir para o conteúdo
       </a>
 
-      <header className="site-header">
+      <header className="site-header" data-hero-chrome>
         <a className="brand" href="#inicio" aria-label="Instituto Impactus, início">
           <span className="brand-mark" aria-hidden="true">
             O3
@@ -180,7 +182,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
       <main id="conteudo">
         <section className="hero" id="inicio">
           <div className="hero-grid" aria-hidden="true" />
-          <div className="hero-copy">
+          <div className="hero-copy" data-hero-content>
             <p className="eyebrow">
               <span /> Workshop de Ozonioterapia
             </p>
@@ -214,7 +216,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
               </li>
             </ul>
           </div>
-          <div className="portrait-shell portrait-shell-hero" aria-hidden="true">
+          <div className="portrait-shell portrait-shell-hero" data-hero-visual aria-hidden="true">
             <div className="portrait-blank" />
             <div className="portrait-orbit portrait-orbit-one" />
             <div className="portrait-orbit portrait-orbit-two" />
@@ -222,11 +224,11 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="transformation section-pad">
-          <div className="section-intro">
+          <div className="section-intro" data-reveal>
             <p className="section-kicker">O ponto de virada</p>
             <h2>Você não precisa repetir o protocolo que domina.</h2>
           </div>
-          <div className="shift-list">
+          <div className="shift-list" data-stagger>
             {[
               ["Da tabela", "para a anamnese"],
               ["Do caso rotineiro", "para o raciocínio diante do novo"],
@@ -242,7 +244,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="discoveries section-pad">
-          <div className="section-intro split-intro">
+          <div className="section-intro split-intro" data-reveal>
             <div>
               <p className="section-kicker light">Critério antes da aplicação</p>
               <h2>O que você vai descobrir.</h2>
@@ -251,7 +253,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
               Técnica você já pode ter. O workshop mostra a camada anterior, onde o caso é lido e a conduta começa a ser decidida.
             </p>
           </div>
-          <div className="discovery-grid">
+          <div className="discovery-grid" data-stagger>
             {discoveries.map((item, index) => (
               <article key={item}>
                 <span>0{index + 1}</span>
@@ -262,14 +264,14 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="clinical-story section-pad">
-          <div className="clinical-icon" aria-hidden="true">
+          <div className="clinical-icon" data-reveal aria-hidden="true">
             <HeartPulse />
           </div>
-          <div>
+          <div data-reveal>
             <p className="section-kicker">Quando a técnica parece certa</p>
             <h2>E mesmo assim o resultado não vem.</h2>
           </div>
-          <div className="story-copy">
+          <div className="story-copy" data-reveal>
             <p>
               Existe um momento na carreira de quem trabalha com ozônio que quase ninguém comenta. O paciente volta e pergunta se é normal ainda não sentir diferença.
             </p>
@@ -283,7 +285,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="program section-pad" id="programa">
-          <div className="section-intro split-intro">
+          <div className="section-intro split-intro" data-reveal>
             <div>
               <p className="section-kicker">Programa completo</p>
               <h2>Seis blocos. Uma aplicação. Cada escolha explicada.</h2>
@@ -292,7 +294,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
               A experiência foi organizada para você acompanhar a construção do raciocínio, participar da decisão e reconhecer o que ainda precisa dominar.
             </p>
           </div>
-          <div className="program-list">
+          <div className="program-list" data-stagger>
             {program.map((item) => (
               <article key={item.number}>
                 <span>{item.number}</span>
@@ -304,13 +306,13 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="experience section-pad">
-          <div className="experience-card">
+          <div className="experience-card" data-reveal>
             <p className="section-kicker light">Como a experiência acontece</p>
             <h2>Você decide antes de conhecer a decisão real.</h2>
             <p>
               Durante a aplicação, a turma é convidada a dizer o que faria. Quais perguntas entrariam na anamnese? Que via seria considerada? Só depois o raciocínio real é apresentado. É nesse contraste que aparece o que você já sabe e o que ainda parecia saber.
             </p>
-            <div className="experience-steps" aria-label="Etapas da experiência">
+            <div className="experience-steps" role="group" aria-label="Etapas da experiência">
               <span>Anamnese</span>
               <ArrowRight aria-hidden="true" />
               <span>Decisão</span>
@@ -318,7 +320,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
               <span>Aplicação</span>
             </div>
           </div>
-          <aside>
+          <aside data-reveal>
             <Clock3 aria-hidden="true" />
             <strong>90 min</strong>
             <p>por videochamada, com acesso enviado após a confirmação da compra</p>
@@ -326,11 +328,11 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="truths section-pad">
-          <div className="section-intro">
+          <div className="section-intro" data-reveal>
             <p className="section-kicker">Quatro ideias essenciais</p>
             <h2>O que muda quando o critério entra na frente da técnica.</h2>
           </div>
-          <div className="truth-grid">
+          <div className="truth-grid" data-stagger>
             {truthCards.map((item, index) => (
               <article key={item.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
@@ -342,7 +344,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="audience section-pad">
-          <div className="audience-main">
+          <div className="audience-main" data-reveal>
             <p className="section-kicker light">Para quem faz sentido</p>
             <h2>Para profissionais que precisam decidir, não apenas repetir.</h2>
             <ul className="check-list">
@@ -360,7 +362,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
               ))}
             </ul>
           </div>
-          <aside className="not-for">
+          <aside className="not-for" data-reveal>
             <p>Não é indicado para</p>
             <ul>
               <li>Profissionais sem nível superior na área da saúde.</li>
@@ -371,13 +373,13 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="method section-pad">
-          <div className="method-visual" aria-hidden="true">
+          <div className="method-visual" data-reveal aria-hidden="true">
             <div className="method-ring method-ring-one" />
             <div className="method-ring method-ring-two" />
             <div className="method-ring method-ring-three" />
             <span>O3</span>
           </div>
-          <div className="method-copy">
+          <div className="method-copy" data-reveal>
             <p className="section-kicker">O diferencial</p>
             <h2>A primeira camada do Método O3 em 3 Camadas.</h2>
             <p>
@@ -390,10 +392,10 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="authority section-pad">
-          <div className="portrait-shell portrait-shell-authority" aria-hidden="true">
+          <div className="portrait-shell portrait-shell-authority" data-reveal aria-hidden="true">
             <div className="portrait-blank" />
           </div>
-          <div className="authority-copy">
+          <div className="authority-copy" data-reveal>
             <p className="section-kicker light">Instituto Impactus</p>
             <h2>Conhecimento clínico reunido além das fronteiras de uma sala de aula.</h2>
             <p>
@@ -420,7 +422,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="offer section-pad" id="inscricao">
-          <div className="offer-copy">
+          <div className="offer-copy" data-reveal>
             <p className="section-kicker">Seu acesso ao workshop</p>
             <h2>Veja a decisão acontecendo.</h2>
             <p>
@@ -442,7 +444,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
               ))}
             </ul>
           </div>
-          <div className="price-card">
+          <div className="price-card" data-reveal>
             <p>Investimento</p>
             <div className="price">
               <span>R$</span>
@@ -467,8 +469,10 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="guarantee section-pad">
-          <GuaranteeSeal />
-          <div>
+          <div data-reveal>
+            <GuaranteeSeal />
+          </div>
+          <div data-reveal>
             <p className="section-kicker light">Você decide com tranquilidade</p>
             <h2>Assista e avalie o workshop por 7 dias.</h2>
             <p>
@@ -478,14 +482,14 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="faq section-pad">
-          <div className="section-intro split-intro">
+          <div className="section-intro split-intro" data-reveal>
             <div>
               <p className="section-kicker">Dúvidas frequentes</p>
               <h2>Antes de decidir, veja se o workshop é para você.</h2>
             </div>
             <MessageCircleQuestion aria-hidden="true" />
           </div>
-          <div className="faq-list">
+          <div className="faq-list" data-stagger>
             {faq.map((item) => (
               <details key={item.question}>
                 <summary>{item.question}</summary>
@@ -495,7 +499,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
           </div>
         </section>
 
-        <section className="closing section-pad">
+        <section className="closing section-pad" data-reveal>
           <div className="closing-symbol" aria-hidden="true">
             <Stethoscope />
           </div>
