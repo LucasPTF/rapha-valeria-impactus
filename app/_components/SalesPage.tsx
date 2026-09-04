@@ -410,8 +410,22 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="authority section-pad">
-          <div className="portrait-shell portrait-shell-authority" data-reveal aria-hidden="true">
-            <div className="portrait-blank" />
+          <div className="authority-video-card" data-reveal>
+            <div className="authority-video-frame">
+              {/* A fonte recebida não inclui arquivo de legendas. */}
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+              <video
+                className="authority-video"
+                controls
+                playsInline
+                preload="metadata"
+                aria-describedby="authority-video-caption"
+              >
+                <source src="/media/instituto-impactus-instagram.mp4" type="video/mp4" />
+                Seu navegador não oferece suporte à reprodução deste vídeo.
+              </video>
+            </div>
+            <p id="authority-video-caption">Registro do Instituto Impactus publicado no Instagram.</p>
           </div>
           <div className="authority-copy" data-reveal>
             <p className="section-kicker light">Instituto Impactus</p>
