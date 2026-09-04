@@ -20,21 +20,33 @@ type Variant = "a1" | "a2" | "a3";
 
 const heroCopy: Record<Variant, { titleLines: [string, string, string]; support: string; cta: string }> = {
   a1: {
-    titleLines: ["Aplicar ozônio.", "Aplicar bem.", "Decidir o protocolo."],
+    titleLines: [
+      "Existe uma diferença gigantesca entre",
+      "quem aplica ozônio, quem aplica bem",
+      "e quem decide o protocolo.",
+    ],
     support:
       "Em 90 minutos, você acompanha uma aplicação completa e vê essa decisão sendo tomada, da anamnese à agulha.",
     cta: "Quero acompanhar a aplicação",
   },
   a2: {
-    titleLines: ["Mesma aplicação.", "Dois pacientes.", "Respostas diferentes."],
+    titleLines: [
+      "A mesma aplicação, em dois pacientes.",
+      "No primeiro não respondeu.",
+      "No segundo respondeu.",
+    ],
     support:
       "Mudou uma decisão tomada antes da agulha. Você vai acompanhar anamnese, dose, via e frequência sendo decididas caso a caso.",
     cta: "Quero entender a decisão",
   },
   a3: {
-    titleLines: ["Na sua cidade,", "quem decide", "o protocolo?"],
+    titleLines: [
+      "Na sua cidade, quantos profissionais",
+      "decidem o protocolo de ozônio",
+      "caso a caso?",
+    ],
     support:
-      "Em 90 minutos, você acompanha uma aplicação completa e participa da decisão caso a caso antes de conhecer a escolha real.",
+      "Em 90 minutos, você acompanha uma aplicação completa e decide junto antes de conhecer a escolha real.",
     cta: "Quero participar do workshop",
   },
 };
@@ -183,9 +195,10 @@ export function SalesPage({ variant }: { variant: Variant }) {
               <span /> Workshop de Ozonioterapia
             </p>
             <h1>
-              {hero.titleLines.map((line) => (
+              {hero.titleLines.map((line, index) => (
                 <span className="hero-title-line" key={line}>
                   {line}
+                  {index < hero.titleLines.length - 1 ? " " : null}
                 </span>
               ))}
             </h1>

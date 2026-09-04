@@ -302,9 +302,9 @@ summary:focus-visible {
 .hero h1 {
   max-width: 100%;
   margin-bottom: 28px;
-  font-size: clamp(2.35rem, 5vw, 4rem);
-  line-height: 0.97;
-  letter-spacing: -0.058em;
+  font-size: clamp(1.9rem, 2.55vw, 2.35rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
 }
 
 .hero-title-line {
@@ -1887,6 +1887,12 @@ footer > span {
   .hero h1 {
     font-size: clamp(2rem, 9vw, 2.64rem);
     line-height: 0.98;
+  }
+
+  .hero-title-line {
+    display: inline;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .hero-support {
