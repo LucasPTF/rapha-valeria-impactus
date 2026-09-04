@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
@@ -232,7 +233,16 @@ export function SalesPage({ variant }: { variant: Variant }) {
             </ul>
           </div>
           <div className="portrait-shell portrait-shell-hero" data-hero-visual aria-hidden="true">
-            <div className="portrait-blank" />
+            <div className="portrait-blank hero-photo-frame">
+              <Image
+                className="hero-photo"
+                src="/media/valeria-hero.jpeg"
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 900px) 78vw, 38vw"
+              />
+            </div>
             <div className="portrait-orbit portrait-orbit-one" />
             <div className="portrait-orbit portrait-orbit-two" />
           </div>
@@ -410,22 +420,42 @@ export function SalesPage({ variant }: { variant: Variant }) {
         </section>
 
         <section className="authority section-pad">
-          <div className="authority-video-card" data-reveal>
-            <div className="authority-video-frame">
-              {/* A fonte recebida não inclui arquivo de legendas. */}
-              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-              <video
-                className="authority-video"
-                controls
-                playsInline
-                preload="metadata"
-                aria-describedby="authority-video-caption"
-              >
-                <source src="/media/instituto-impactus-instagram.mp4" type="video/mp4" />
-                Seu navegador não oferece suporte à reprodução deste vídeo.
-              </video>
+          <div className="authority-media">
+            <div className="authority-video-card" data-reveal>
+              <div className="authority-video-frame">
+                {/* A fonte recebida não inclui arquivo de legendas. */}
+                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                <video
+                  className="authority-video"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-describedby="authority-video-caption"
+                >
+                  <source src="/media/instituto-impactus-instagram.mp4" type="video/mp4" />
+                  Seu navegador não oferece suporte à reprodução deste vídeo.
+                </video>
+              </div>
+              <p id="authority-video-caption">Registro do Instituto Impactus publicado no Instagram.</p>
             </div>
-            <p id="authority-video-caption">Registro do Instituto Impactus publicado no Instagram.</p>
+            <div className="authority-portraits" data-stagger aria-hidden="true">
+              <div className="authority-portrait">
+                <Image
+                  src="/media/valeria-retrato-1.jpeg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 900px) 44vw, 24vw"
+                />
+              </div>
+              <div className="authority-portrait">
+                <Image
+                  src="/media/valeria-retrato-2.jpeg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 900px) 44vw, 24vw"
+                />
+              </div>
+            </div>
           </div>
           <div className="authority-copy" data-reveal>
             <p className="section-kicker light">Instituto Impactus</p>

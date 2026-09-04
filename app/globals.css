@@ -495,6 +495,16 @@ summary:focus-visible {
   border-radius: inherit;
 }
 
+.hero-photo-frame::before,
+.hero-photo-frame::after {
+  display: none;
+}
+
+.hero-photo {
+  object-fit: cover;
+  object-position: center 24%;
+}
+
 .portrait-orbit {
   position: absolute;
   z-index: -1;
@@ -1033,14 +1043,20 @@ summary:focus-visible {
 
 .authority {
   display: grid;
-  grid-template-columns: minmax(340px, 0.7fr) minmax(0, 1fr);
-  gap: clamp(64px, 9vw, 138px);
+  grid-template-columns: minmax(480px, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(48px, 6vw, 86px);
   align-items: center;
   color: var(--white);
   background:
     radial-gradient(circle at 13% 78%, rgba(87, 216, 197, 0.12), transparent 25rem),
     var(--deep);
   box-shadow: var(--shadow-lg);
+}
+
+.authority-media {
+  min-width: 0;
+  display: grid;
+  gap: 18px;
 }
 
 .authority-video-card {
@@ -1076,6 +1092,26 @@ summary:focus-visible {
   line-height: 1.5;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+}
+
+.authority-portraits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.authority-portrait {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 28px;
+}
+
+.authority-portrait img {
+  object-fit: cover;
+  object-position: center 26%;
 }
 
 .authority-copy > p:not(.section-kicker) {
@@ -1765,6 +1801,18 @@ footer > span {
   }
 }
 
+@media (max-width: 1080px) {
+  .authority {
+    grid-template-columns: 1fr;
+  }
+
+  .authority-media,
+  .authority-copy {
+    width: min(780px, 100%);
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 900px) {
   .site-header {
     min-height: 74px;
@@ -1849,7 +1897,12 @@ footer > span {
   }
 
   .authority-video-card {
-    width: min(680px, 100%);
+    width: min(780px, 100%);
+    margin: 0 auto;
+  }
+
+  .authority-portraits {
+    width: min(780px, 100%);
     margin: 0 auto;
   }
 
@@ -2037,6 +2090,19 @@ footer > span {
   .authority-video-card > p {
     margin: 12px 6px 3px;
     font-size: 0.61rem;
+  }
+
+  .authority-media {
+    gap: 10px;
+  }
+
+  .authority-portraits {
+    gap: 10px;
+  }
+
+  .authority-portrait {
+    aspect-ratio: 1;
+    border-radius: 22px;
   }
 
   .authority-stats {
