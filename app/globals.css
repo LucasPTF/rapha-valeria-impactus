@@ -178,7 +178,7 @@ summary:focus-visible {
   letter-spacing: 0.08em;
 }
 
-.brand-mark {
+.impactus-mark {
   width: 44px;
   height: 44px;
   display: grid;
@@ -188,10 +188,21 @@ summary:focus-visible {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(8, 46, 51, 0.18);
-  font-size: 0.72rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+}
+
+.impactus-mark svg {
+  width: 29px;
+  height: 29px;
+  overflow: visible;
+  transition: transform 140ms var(--ease-out);
+}
+
+.impactus-mark-link {
+  opacity: 0.58;
+}
+
+.impactus-mark-core {
+  fill: var(--aqua);
 }
 
 .header-link {
@@ -811,12 +822,21 @@ summary:focus-visible {
   margin-bottom: auto;
 }
 
-.experience aside strong {
-  font-size: clamp(4.5rem, 8vw, 6.8rem);
+.experience-duration {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: clamp(3.6rem, 6vw, 5rem);
   font-variant-numeric: tabular-nums;
-  font-weight: 610;
-  line-height: 0.82;
-  letter-spacing: -0.075em;
+  font-weight: 640;
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+
+.experience-duration small {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 760;
+  letter-spacing: -0.025em;
 }
 
 .experience aside p {
@@ -964,7 +984,7 @@ summary:focus-visible {
   box-shadow: var(--shadow-md);
 }
 
-.method-visual > span {
+.impactus-mark-method {
   position: relative;
   z-index: 1;
   width: 112px;
@@ -976,10 +996,11 @@ summary:focus-visible {
   border: 8px solid rgba(255, 255, 255, 0.76);
   border-radius: 50%;
   box-shadow: 0 16px 38px rgba(8, 46, 51, 0.23);
-  font-size: 2rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 780;
-  letter-spacing: -0.055em;
+}
+
+.impactus-mark-method svg {
+  width: 62px;
+  height: 62px;
 }
 
 .method-ring {
@@ -1650,6 +1671,10 @@ footer > span {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .brand:hover .impactus-mark svg {
+    transform: scale(1.04);
+  }
+
   .header-link:hover {
     color: var(--white);
     background: var(--deep);
@@ -1970,10 +1995,14 @@ footer > span {
     border-radius: 32px;
   }
 
-  .method-visual > span {
+  .impactus-mark-method {
     width: 96px;
     height: 96px;
-    font-size: 1.75rem;
+  }
+
+  .impactus-mark-method svg {
+    width: 54px;
+    height: 54px;
   }
 
   .portrait-shell-authority {

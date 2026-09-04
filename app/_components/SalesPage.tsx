@@ -13,6 +13,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { GuaranteeSeal } from "./GuaranteeSeal";
+import { ImpactusMark } from "./ImpactusMark";
 import { MotionController } from "./MotionController";
 
 type Variant = "a1" | "a2" | "a3";
@@ -162,9 +163,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
 
       <header className="site-header" data-hero-chrome>
         <a className="brand" href="#inicio" aria-label="Instituto Impactus, início">
-          <span className="brand-mark" aria-hidden="true">
-            O3
-          </span>
+          <ImpactusMark />
           <span>
             Instituto
             <strong>Impactus</strong>
@@ -325,7 +324,10 @@ export function SalesPage({ variant }: { variant: Variant }) {
           </div>
           <aside data-reveal>
             <Clock3 aria-hidden="true" />
-            <strong>90 min</strong>
+            <strong className="experience-duration" aria-label="90 minutos">
+              <span>90</span>
+              <small>min</small>
+            </strong>
             <p>por videochamada, com acesso enviado após a confirmação da compra</p>
           </aside>
         </section>
@@ -380,7 +382,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
             <div className="method-ring method-ring-one" />
             <div className="method-ring method-ring-two" />
             <div className="method-ring method-ring-three" />
-            <span>O3</span>
+            <ImpactusMark className="impactus-mark-method" />
           </div>
           <div className="method-copy" data-reveal>
             <p className="section-kicker">O diferencial</p>
@@ -517,9 +519,7 @@ export function SalesPage({ variant }: { variant: Variant }) {
 
       <footer>
         <div className="brand brand-footer">
-          <span className="brand-mark" aria-hidden="true">
-            O3
-          </span>
+          <ImpactusMark />
           <span>
             Instituto
             <strong>Impactus</strong>
