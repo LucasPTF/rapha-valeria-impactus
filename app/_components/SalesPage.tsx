@@ -438,24 +438,6 @@ export function SalesPage({ variant }: { variant: Variant }) {
               </div>
               <p id="authority-video-caption">Registro do Instituto Impactus publicado no Instagram.</p>
             </div>
-            <div className="authority-portraits" data-stagger aria-hidden="true">
-              <div className="authority-portrait">
-                <Image
-                  src="/media/valeria-retrato-1.jpeg"
-                  alt=""
-                  fill
-                  sizes="(max-width: 900px) 44vw, 24vw"
-                />
-              </div>
-              <div className="authority-portrait">
-                <Image
-                  src="/media/valeria-retrato-2.jpeg"
-                  alt=""
-                  fill
-                  sizes="(max-width: 900px) 44vw, 24vw"
-                />
-              </div>
-            </div>
           </div>
           <div className="authority-copy" data-reveal>
             <p className="section-kicker light">Instituto Impactus</p>
