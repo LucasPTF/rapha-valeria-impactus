@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Clock3, MailCheck, MessageCircle } from "lucide-react";
+import { ImpactusMark } from "../_components/ImpactusMark";
 import { MotionController } from "../_components/MotionController";
 
 export const metadata = {
@@ -12,9 +13,7 @@ export default function ObrigadoPage() {
       <div className="thanks-grid" aria-hidden="true" />
       <header className="thanks-header">
         <a className="brand" href="/a1" aria-label="Instituto Impactus, página inicial">
-          <span className="brand-mark" aria-hidden="true">
-            O3
-          </span>
+          <ImpactusMark />
           <span>
             Instituto
             <strong>Impactus</strong>
